@@ -3,6 +3,7 @@ import Header from "../Layouts/Header";
 import Cart from "../Cart/Cart";
 import CartProvider from "../../store/CartProvider";
 import Meals from "../Meals/Meals";
+import "../../App.css"
 
 function App() {
   const [cartIsShown, setCartIsShown] = useState(false);
@@ -19,7 +20,7 @@ function App() {
     <CartProvider>
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
-      <main>
+      <main className="app-main">
         <Meals />
       </main>
     </CartProvider>
